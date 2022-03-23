@@ -84,6 +84,11 @@ namespace WpfSkeleton.ViewModels
 
             /////////////////////////////　　　　メモ帳
             // ファイル読み込み
+            if (!File.Exists(@"Data.txt"))
+            {
+                File.Create(@"Data.txt");
+            }
+            
             StreamReader sr = new StreamReader(@"Data.txt", Encoding.GetEncoding("UTF-8"));
             string str = sr.ReadToEnd();
             sr.Close();
